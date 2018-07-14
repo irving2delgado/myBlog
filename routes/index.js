@@ -30,7 +30,11 @@ var routes = {
 exports = module.exports = function (app) {
 
 	// Views
-	app.get('/', routes.views.index);
+	app.get('/',function(req,res){
+       
+		res.sendFile('index.html');
+   
+   })
 	app.get('/blog/:category?', routes.views.blog);
 	app.all('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
